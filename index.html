@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VOIP</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="design_logo.css">
+    <link rel="stylesheet" href="design_nav.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js" integrity="sha512-kDuUo39RGApdfHkM1WQL8Pg9BYtYGS5rD14AzePsD4SEaixw7v/ykAkLMdsSjuBCNFE6/FAP+WIHh6N6QZJl5w==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js" integrity="sha512-hFyYiBIWCYSyo98oFGWjG5V8HEV4g5O2pxu0mzU8qIMC7lrrwtcKWoRDZcpRL0ywIIM2d/XsBJ9iXNLFf6kIgw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js" integrity="sha512-judXDFLnOTJsUwd55lhbrX3uSoSQSOZR6vNrsll+4ViUFv+XOIr/xaIK96soMj6s5jVszd7I97a0H+WhgFwTEg==" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+</head>
+<body>
+
+<section ID="Section_1">
+     <article ID="Home"></article>
+
+     <svg id="logo" width="322" height="104" viewBox="0 0 322 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M91.032 1.63198L53.16 102H38.04L0.167999 1.63198H14.136L45.672 88.176L77.208 1.63198H91.032Z" stroke="white" stroke-width="2"/>
+          <path d="M150.904 103.008C141.592 103.008 133.097 100.848 125.417 96.528C117.737 92.112 111.641 86.016 107.129 78.24C102.713 70.368 100.505 61.536 100.505 51.744C100.505 41.952 102.713 33.168 107.129 25.392C111.641 17.52 117.737 11.424 125.417 7.10398C133.097 2.68798 141.592 0.47998 150.904 0.47998C160.312 0.47998 168.856 2.68798 176.536 7.10398C184.216 11.424 190.265 17.472 194.681 25.248C199.097 33.024 201.305 41.856 201.305 51.744C201.305 61.632 199.097 70.464 194.681 78.24C190.265 86.016 184.216 92.112 176.536 96.528C168.856 100.848 160.312 103.008 150.904 103.008ZM150.904 91.632C157.912 91.632 164.201 90 169.769 86.736C175.433 83.472 179.849 78.816 183.017 72.768C186.281 66.72 187.913 59.712 187.913 51.744C187.913 43.68 186.281 36.672 183.017 30.72C179.849 24.672 175.481 20.016 169.913 16.752C164.345 13.488 158.008 11.856 150.904 11.856C143.8 11.856 137.464 13.488 131.896 16.752C126.328 20.016 121.912 24.672 118.648 30.72C115.48 36.672 113.896 43.68 113.896 51.744C113.896 59.712 115.48 66.72 118.648 72.768C121.912 78.816 126.328 83.472 131.896 86.736C137.561 90 143.896 91.632 150.904 91.632Z" stroke="white" stroke-width="2"/>
+          <path d="M231.708 1.63198V102H218.604V1.63198H231.708Z" stroke="white" stroke-width="2"/>
+          <path d="M321.145 31.008C321.145 39.36 318.265 46.32 312.505 51.888C306.841 57.36 298.153 60.096 286.441 60.096H267.145V102H254.041V1.63198H286.441C297.769 1.63198 306.361 4.36798 312.217 9.83998C318.169 15.312 321.145 22.368 321.145 31.008ZM286.441 49.296C293.737 49.296 299.113 47.712 302.569 44.544C306.025 41.376 307.753 36.864 307.753 31.008C307.753 18.624 300.649 12.432 286.441 12.432H267.145V49.296H286.441Z" stroke="white" stroke-width="2"/>
+          </svg>
+          
+          <img src="arrow_down.png" ID="arrow_down_1" onClick="document.getElementById('Allgemeines').scrollIntoView();"></img>
+          <img src="arrow_up.png" ID="arrow_up_1" onClick="document.getElementById('#').scrollIntoView();"></img>            
+
+     <div class="toggle-btn">
+          <span class="one"></span>
+          <span class="two"></span>
+     </div>
+
+     <div class="menu">
+          <div class="data">
+               <ul>
+                    <li>Navigation</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#Allgemeines">Allgemeines</a></li>
+                    <li><a href="#Konfiguration">Konfiguration</a></li>                   
+               </ul>
+          </div>
+     </div>
+</section>
+
+<section ID="Section_Allgemeines">
+     <article ID="Allgemeines"></article>
+
+     <img src="arrow_up.png" ID="arrow_up_2" onClick="document.getElementById('Home').scrollIntoView();"></img>
+     <img src="arrow_down.png" ID="arrow_down_2" onClick="document.getElementById('Konfiguration').scrollIntoView();"></img>
+
+Text
+
+</section>
+
+<section ID="Section_Konfiguration">
+     <article ID="Konfiguration"></article>
+     <div ID="Text1">
+
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum blanditiis consequatur, iusto libero impedit eligendi at molestias optio voluptate facere doloribus rem laboriosam eius fuga quo laudantium porro fugit deleniti!
+     
+     </div>
+     
+     <div ID="Bild1">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quos libero velit eos temporibus omnis voluptates, neque ipsa sequi esse dolor molestiae quis. Quo voluptatibus labore, suscipit doloribus reprehenderit totam.
+          
+     </div>
+
+     <div ID="Text2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quos libero velit eos temporibus omnis voluptates, neque ipsa sequi esse dolor molestiae quis. Quo voluptatibus labore, suscipit doloribus reprehenderit totam.
+          
+     </div>
+
+     <div ID="Bild2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quos libero velit eos temporibus omnis voluptates, neque ipsa sequi esse dolor molestiae quis. Quo voluptatibus labore, suscipit doloribus reprehenderit totam.
+          
+     </div>
+
+     <div ID="Text3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quos libero velit eos temporibus omnis voluptates, neque ipsa sequi esse dolor molestiae quis. Quo voluptatibus labore, suscipit doloribus reprehenderit totam.
+          
+     </div>
+
+     <div ID="Bild3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quos libero velit eos temporibus omnis voluptates, neque ipsa sequi esse dolor molestiae quis. Quo voluptatibus labore, suscipit doloribus reprehenderit totam.
+          
+     </div>
+
+     <div ID="Line"></div>
+
+     <img src="arrow_up.png" ID="arrow_up_3" onClick="document.getElementById('Allgemeines').scrollIntoView();"></img>
+     <img src="arrow_down.png" ID="arrow_down_3" onClick="document.getElementById('#').scrollIntoView();"></img>
+
+</section>
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+var t1 = new TimelineMax({paused: true});
+
+t1.to(".one", 0.8, {
+     y: 6,
+     rotation: 45,
+     ease: Expo.easeInOut
+});
+
+t1.to(".two", 0.8, {
+     y: -6,
+     rotation: -45,
+     ease: Expo.easeInOut,
+     delay: -0.8
+});
+
+t1.to(".menu", 2, {
+     top: "0%",
+     ease: Expo.easeInOut,
+     delay: -2
+});
+
+t1.staggerFrom(".menu ul li", 2, {x: -200, opacity: 0, ease:Expo.easeOut}, 0.3);
+
+t1.reverse();
+
+$(document).on("click", ".toggle-btn", function() {
+     t1.reversed(!t1.reversed());
+});
+$(document).on("click", "a", function() {
+     t1.reversed(!t1.reversed());
+});
+
+</script>
+<script src="app.js"></script>
+
+
+
+</body>
+</html>

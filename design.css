@@ -1,0 +1,183 @@
+#Section_1{
+
+    background: url(hero.jpg) no-repeat 50% 50%;
+    background-size: cover;
+height:100vh;
+
+}
+
+#Section_Allgemeines{
+
+height:100vh;
+position:relative;
+background-color: #485461;
+background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+
+}
+
+#Section_Konfiguration{
+
+    height:100vh;
+    position:relative;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+   
+
+}
+
+
+
+.container{
+
+    overflow-y:scroll;
+    scroll-behavior:smooth;
+    scroll-snap-type:y mandatory;
+
+}
+
+#Text1{
+
+background-color:turquoise;
+width:250px;
+height:150px;
+padding: 25px;
+position:absolute;
+top:10%;
+left:10%;
+}
+
+#Bild1{
+
+    background-color:thistle;
+    width:250px;
+    height:150px;
+    padding: 25px;
+    position:absolute;
+    top:10%;
+    right:10%;
+
+}
+
+#Text2{
+
+    background-color:turquoise;
+    width:250px;
+    height:150px;
+    padding: 25px;
+    position:absolute;
+    top:40%;
+    left:10%;
+    }
+    
+    #Bild2{
+    
+        background-color:thistle;
+        width:250px;
+        height:150px;
+        padding: 25px;
+        position:absolute;
+        top:40%;
+        right:10%;
+    
+    }
+
+    #Text3{
+
+        background-color:turquoise;
+        width:250px;
+        height:150px;
+        padding: 25px;
+        position:absolute;
+        top:70%;
+        left:10%;
+        }
+        
+        #Bild3{
+        
+            background-color:thistle;
+            width:250px;
+            height:150px;
+            padding: 25px;
+            position:absolute;
+            top:70%;
+            right:10%;
+        
+        }
+
+#Line{
+
+    height:80%;
+width:1px;
+border:1px white solid;
+background:white;
+position:absolute;
+left:50%;
+top:10%;
+position:absolute;
+
+}
+
+#arrow_down_1{
+
+
+width:50px;
+position:absolute;
+bottom:0%;
+right:0%;
+
+
+}
+
+#arrow_up_1{
+
+width:50px;
+position:absolute;
+bottom:0%;
+right:2%;
+    
+    
+}
+
+#arrow_down_2{
+
+
+     width:50px;
+     position:absolute;
+     bottom:0%;
+     right:0%;
+        
+        
+}
+        
+#arrow_up_2{
+        
+        
+     width:50px;
+     position:absolute;
+     bottom:0%;
+     right:2%;
+            
+            
+}
+
+#arrow_down_3{
+
+
+    width:50px;
+    position:absolute;
+    bottom:0%;
+    right:0%;
+    
+    
+    }
+    
+    #arrow_up_3{
+    
+    
+        width:50px;
+        position:absolute;
+        bottom:0%;
+        right:2%;
+        
+        
+        }
