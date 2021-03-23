@@ -25,6 +25,15 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 
 }
 
+#Section_Telefone{
+
+    height:100vh;
+    position:relative;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+
+}
+
 
 
 .container{
@@ -37,70 +46,68 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 
 #Text1{
 
-background-color:turquoise;
-width:250px;
-height:150px;
+background-color:black;
+color:white;
+width:33%;
 padding: 25px;
 position:absolute;
 top:10%;
 left:10%;
+border-radius:50px;
 }
 
 #Bild1{
 
-    background-color:thistle;
-    width:250px;
-    height:150px;
+    background-color:black;
+    color:white;
+    width:33%;
     padding: 25px;
     position:absolute;
     top:10%;
     right:10%;
+    border-radius:50px;
 
 }
 
-#Text2{
-
-    background-color:turquoise;
-    width:250px;
-    height:150px;
-    padding: 25px;
-    position:absolute;
-    top:40%;
-    left:10%;
-    }
     
     #Bild2{
     
-        background-color:thistle;
-        width:250px;
-        height:150px;
+        background-color:black;
+        color:white;
+        width:33%;
+        
         padding: 25px;
         position:absolute;
         top:40%;
         right:10%;
+        border-radius:50px;
     
     }
 
     #Text3{
 
-        background-color:turquoise;
+        background-color:black;
+        color:white;
         width:250px;
         height:150px;
         padding: 25px;
         position:absolute;
         top:70%;
         left:10%;
+        border-radius:6%;
         }
         
         #Bild3{
         
-            background-color:thistle;
+            background-color:black;
+            color:white;
             width:250px;
             height:150px;
             padding: 25px;
             position:absolute;
             top:70%;
             right:10%;
+            border-radius:6%;
         
         }
 
@@ -181,3 +188,119 @@ right:2%;
         
         
         }
+
+
+        #Text1_{
+
+            background-color:black;
+            color:white;
+            width:25%;
+            height:20%;
+            padding: 25px;
+            position:absolute;
+            top:10%;
+            left:10%;
+            border-radius:6%;
+            }
+            
+            #Bild1_{
+            
+                background-color:black;
+                color:white;
+                width:25%;
+                height:20%;
+                padding: 25px;
+                position:absolute;
+                top:10%;
+                right:10%;
+                border-radius:6%;
+            
+            }
+            
+            #Text2_{
+            
+                background-color:black;
+                color:white;
+                width:25%;
+                height:250px;
+                padding: 25px;
+                position:absolute;
+                top:40%;
+                left:10%;
+                border-radius:6%;
+                }
+                
+                #Bild2_{
+                
+                    background-color:black;
+                    color:white;
+                    width:25%;
+                    height:20%;
+                    padding: 25px;
+                    position:absolute;
+                    top:40%;
+                    right:10%;
+                    border-radius:6%;
+                }
+            
+                #Text3_{
+            
+                    background-color:black;
+                    color:white;
+                    width:25%;
+                    height:20%;
+                    padding: 25px;
+                    position:absolute;
+                    top:70%;
+                    left:10%;
+                    border-radius:6%;
+                    }
+                    
+                    #Bild3_{
+                    
+                        background-color:black;
+                        color:white;
+                        width:250px;
+                        height:150px;
+                        padding: 25px;
+                        position:absolute;
+                        top:70%;
+                        right:10%;
+                        border-radius:6%;
+                    
+                    }
+.Überschrift{
+
+
+text-decoration:underline;
+
+
+}
+
+.comment{
+
+color:greenyellow;
+padding-left:5em;
+
+}
+
+#Telefon1{
+
+width:99%;
+height:45%;
+position:absolute;
+    
+
+
+}
+
+#Telefon2{
+
+   width:99%;
+    height:45%;
+    position:absolute;
+    top:50%;
+    
+   
+}
+

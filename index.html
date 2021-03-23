@@ -53,10 +53,35 @@
 <section ID="Section_Allgemeines">
      <article ID="Allgemeines"></article>
 
+     <div ID="Text1_">
+
+         <span class="Überschrift"><b>VOIP</b> (Voice Over IP)</span><br><br>
+         Mithilfe von VOIP ist es möglich Telefonate über das Internet führen zu können. <br><br> VOIP bietet somit eine Resourcenschonendere Möglichkeit für das Telefonieren an. 
+         
+
+     </div>
+     
+     
+
+     <div ID="Bild2_">
+         <span class="Überschrift"><b>SIP</b> (Session Initialisation Protocol)</span><br><br>
+         Mithilfe des SIP kann eine Kommunikationsverbindung zwischen mehreren Teilnehmern auf- und abgebaut werden.
+          
+     </div>
+
+     <div ID="Text3_">
+         <span class="Überschrift"><b>RTP</b> (Real-Time Transport Protocol)</span><br><br>
+         Mithilfe von RTP können Multimedia-Inhalte als Pakete über das Internet übertragen werden.<br><br> RTP ist mit SIP ein grundlegender Bestandteil von VOIP.
+     </div>
+
+     
+
+     <div ID="Line"></div>
+
      <img src="arrow_up.png" ID="arrow_up_2" onClick="document.getElementById('Home').scrollIntoView();"></img>
      <img src="arrow_down.png" ID="arrow_down_2" onClick="document.getElementById('Konfiguration').scrollIntoView();"></img>
 
-Text
+
 
 </section>
 
@@ -64,85 +89,106 @@ Text
      <article ID="Konfiguration"></article>
      <div ID="Text1">
 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum blanditiis consequatur, iusto libero impedit eligendi at molestias optio voluptate facere doloribus rem laboriosam eius fuga quo laudantium porro fugit deleniti!
-     
+       <b>sip.conf</b><br><br>
+
+          [general]<br>
+          language=de<br>
+          context=default<br>
+          bindport=5060 <span class="comment">;Port der für SIP verwendet wird</span><br><br>
+
+          [1877]<br>
+          qualify=yes<span class="comment">;Alle 60 Sekunden wird die Verbindung zum Telefon überprüft</span><br>
+          type=friend<span class="comment">;friend => User kann Anrufe tätigen und empfangen</span><br>
+          host=dynamic<span class="comment">;Telefon erhält seine IP-Adresse vom Router</span><br>
+          disallow=all<span class="comment">;Standardmäßig werden alle Codecs nicht erlaubt</span><br>
+          allow=gsm<br>
+          allow=alaw<br>
+          allow=ulaw<br>
+          username=187<br>
+          password=123<br>
+          mailbox=187<br>
+          context=internal<br><br>
+
+          [1871877]<br>
+          qualify=yes<br>
+          type=friend<br>
+          host=dynamic<br>
+          disallow=all<br>
+          allow=gsm<br>
+          allow=alaw<br>
+          allow=ulaw<br>
+          username187187<br>
+          password=456<br>
+          mailbox=159<br>
+          context=internal<br>
+          
      </div>
      
      <div ID="Bild1">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quos libero velit eos temporibus omnis voluptates, neque ipsa sequi esse dolor molestiae quis. Quo voluptatibus labore, suscipit doloribus reprehenderit totam.
           
-     </div>
+          <b>extensions.conf</b><br><br>
 
-     <div ID="Text2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quos libero velit eos temporibus omnis voluptates, neque ipsa sequi esse dolor molestiae quis. Quo voluptatibus labore, suscipit doloribus reprehenderit totam.
+          [internal]<br>
+          exten => 1877,1,Answer()<br>
+          exten => 1877,2,Dial(SIP,1877)<br>
+          exten => 1877,3,Playback(de_vm-nobodyavailable)<br>
+          exten => 1877,4,VoiceMail(1877)<br>
+          exten => 1877,5,Hangup()<br><br>
+
+          exten => *1877,1,VoiceMailMain(1877)<br>
+          exten => *1877,2,Hangup()<br><br>
           
      </div>
 
      <div ID="Bild2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quos libero velit eos temporibus omnis voluptates, neque ipsa sequi esse dolor molestiae quis. Quo voluptatibus labore, suscipit doloribus reprehenderit totam.
-          
+
+          <b>voicemail.conf</b><br><br>
+
+          [general]<br>
+          format=wav<br>
+          serveremail=Asterisk <span class="comment">;Absender</span><br>
+          attach=yes<span class="comment">;Audionachricht als Anhang senden</span><br>
+          maxmessage=180<span class="comment">;Maximallänge der Nachricht in Sekunden</span><br>
+          minmessage=3<br>
+          maxsilence=10<span class="comment">;Dauer in Sekunden bis Mailbox ran geht</span><br> 
+          maxlogins=3<br>
+          charset=ISO.8859-1<br>
+          fromstring=Asterisk Telefonanlage<br>
+          pagerfromstring= The Asterisk PBX<br>
+          emailsubject=Neue Nachricht<br>
+          emailbody= Auf Ihrer Mailbox wurde eine neue Nachricht hinterlassen<br>
+          mailcmd=/usr/sbin/sendmail<br><br>
+
+          [default]<br>
+          1877 => 123,187,187@web.de <span class="comment">;password,username,email</span><br>
+          1871877 => 456,1871877,187@web.de
+
      </div>
 
-     <div ID="Text3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quos libero velit eos temporibus omnis voluptates, neque ipsa sequi esse dolor molestiae quis. Quo voluptatibus labore, suscipit doloribus reprehenderit totam.
-          
-     </div>
-
-     <div ID="Bild3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quos libero velit eos temporibus omnis voluptates, neque ipsa sequi esse dolor molestiae quis. Quo voluptatibus labore, suscipit doloribus reprehenderit totam.
-          
-     </div>
+     
 
      <div ID="Line"></div>
 
      <img src="arrow_up.png" ID="arrow_up_3" onClick="document.getElementById('Allgemeines').scrollIntoView();"></img>
+     <img src="arrow_down.png" ID="arrow_down_3" onClick="document.getElementById('Telefone').scrollIntoView();"></img>
+
+</section>
+
+<section ID="Section_Telefone">
+
+<article ID="Telefone"></article>
+
+<img ID="Telefon1" src="Telefon1.png">
+<img ID="Telefon2" src="Telefon2.png">
+
+     <img src="arrow_up.png" ID="arrow_up_3" onClick="document.getElementById('Konfiguration').scrollIntoView();"></img>
      <img src="arrow_down.png" ID="arrow_down_3" onClick="document.getElementById('#').scrollIntoView();"></img>
 
 </section>
 
 
-
-
-
-
-<script type="text/javascript">
-
-
-var t1 = new TimelineMax({paused: true});
-
-t1.to(".one", 0.8, {
-     y: 6,
-     rotation: 45,
-     ease: Expo.easeInOut
-});
-
-t1.to(".two", 0.8, {
-     y: -6,
-     rotation: -45,
-     ease: Expo.easeInOut,
-     delay: -0.8
-});
-
-t1.to(".menu", 2, {
-     top: "0%",
-     ease: Expo.easeInOut,
-     delay: -2
-});
-
-t1.staggerFrom(".menu ul li", 2, {x: -200, opacity: 0, ease:Expo.easeOut}, 0.3);
-
-t1.reverse();
-
-$(document).on("click", ".toggle-btn", function() {
-     t1.reversed(!t1.reversed());
-});
-$(document).on("click", "a", function() {
-     t1.reversed(!t1.reversed());
-});
-
-</script>
 <script src="app.js"></script>
-
+<script src="app2.js"></script>
 
 
 </body>

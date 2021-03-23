@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-
+overflow-x:hidden;
 
     
 }
@@ -19,7 +19,7 @@ h1 {
 }
 
 .toggle-btn {
-    position: fixed;
+    position: absolute;
     margin: 1.4em;
     padding: 1em;
     width: 40px;
