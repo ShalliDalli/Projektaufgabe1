@@ -318,3 +318,23 @@ left:15%;
     border-radius:50px;
 
 }
+
+
+#logo_LinPhone{
+
+width:30px;
+position:absolute;
+left:85%;
+top:25%;
+
+
+}
+
+#logo_MicroSIP{
+
+    position:absolute;
+    left:25%;
+    top:30%;
+    width:30px;
+
+}
