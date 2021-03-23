@@ -1,10 +1,12 @@
 var tl = new TimelineMax();
 var tl2 = new TimelineMax();
 var tl3 = new TimelineMax();
+var tl4 = new TimelineMax();
 
 const controller = new ScrollMagic.Controller();
 const controller2 = new ScrollMagic.Controller();
 const controller3 = new ScrollMagic.Controller();
+const controller4 = new ScrollMagic.Controller();
 
 tl.from("#Text1", .5, {x:200, opacity: 0}),
 tl.from("#Bild1", .5, {x:-200, opacity: 0}),
@@ -20,8 +22,12 @@ tl2.from("#Bild3_", .5, {x:-200, opacity: 0});
 tl3.from("#Telefon1", .5, {x:200,opacity: 0}),
 tl3.from("#Telefon2", .5, {x:-200,opacity: 0});
 
-const scene = new ScrollMagic.Scene({
+tl4.from("#MicroSIP_1", .5, {x:200, opacity: 0}),
+tl4.from("#MicroSIP_2", .5, {x:-200, opacity: 0}),
+tl4.from("#LinPhone_1", .5, {x:200, opacity: 0}),
+tl4.from("#LinPhone_2", .5, {x:-200, opacity: 0});
 
+const scene = new ScrollMagic.Scene({
 
 triggerElement: "#Section_Konfiguration",
 triggerHook:"onLeave",
@@ -59,6 +65,18 @@ duration:"100%"
 .setTween(tl3)
 .addTo(controller3);
 
+const scene4 = new ScrollMagic.Scene({
+
+
+triggerElement: "#Section_ClientKonfiguration",
+triggerHook:"onLeave",
+duration:"100%"
+
+})
+
+.setPin("#Section_ClientKonfiguration")
+.setTween(tl4)
+.addTo(controller4);
 
 var t1 = new TimelineMax({paused: true});
 

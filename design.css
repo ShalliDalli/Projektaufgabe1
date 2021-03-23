@@ -34,6 +34,14 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 
 }
 
+#Section_ClientKonfiguration{
+
+    height:100vh;
+    position:relative;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+
+}
 
 
 .container{
@@ -84,32 +92,6 @@ border-radius:50px;
     
     }
 
-    #Text3{
-
-        background-color:black;
-        color:white;
-        width:250px;
-        height:150px;
-        padding: 25px;
-        position:absolute;
-        top:70%;
-        left:10%;
-        border-radius:6%;
-        }
-        
-        #Bild3{
-        
-            background-color:black;
-            color:white;
-            width:250px;
-            height:150px;
-            padding: 25px;
-            position:absolute;
-            top:70%;
-            right:10%;
-            border-radius:6%;
-        
-        }
 
 #Line{
 
@@ -203,19 +185,7 @@ right:2%;
             border-radius:6%;
             }
             
-            #Bild1_{
             
-                background-color:black;
-                color:white;
-                width:25%;
-                height:20%;
-                padding: 25px;
-                position:absolute;
-                top:10%;
-                right:10%;
-                border-radius:6%;
-            
-            }
             
             #Text2_{
             
@@ -304,3 +274,47 @@ position:absolute;
    
 }
 
+#MicroSIP_1{
+
+    background-color:black;
+    color:white;
+    width:25%;
+    height:20%;
+    padding: 25px;
+    position:absolute;
+    top:10%;
+    left:10%;
+    border-radius:50px;
+
+}
+
+
+#MicroSIP_2{
+
+position:absolute;
+top:10%;
+right:15%;
+
+}
+
+#LinPhone_1{
+
+position:absolute;
+top:50%;
+left:15%;
+
+}
+
+#LinPhone_2{
+
+    background-color:black;
+    color:white;
+    width:25%;
+    height:20%;
+    padding: 25px;
+    position:absolute;
+    top:50%;
+    right:10%;
+    border-radius:50px;
+
+}
