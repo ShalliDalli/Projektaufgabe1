@@ -43,6 +43,15 @@ background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 
 }
 
+#Section_Impressum{
+
+    height:100vh;
+    position:relative;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+
+}
+
 
 .container{
 
@@ -285,6 +294,7 @@ position:absolute;
     top:10%;
     left:10%;
     border-radius:50px;
+    z-index:2;
 
 }
 
@@ -336,5 +346,47 @@ top:25%;
     left:25%;
     top:30%;
     width:30px;
+
+}
+
+#Eins{
+
+
+position:absolute;
+top:40%;
+transform: translate(-45%,50%);
+left:50%;
+font-size:50px;
+font-family:Poppins;
+
+}
+
+#Zwei{
+
+
+    position:absolute;
+    top:50%;
+    transform: translate(-50%,50%);
+    left:50%;
+    font-size:45px;
+    font-family:Poppins;
+    
+    }
+
+#windows{
+
+width:1900px;
+height:450px;
+
+z-index:1;
+
+
+}
+
+#android{
+
+    width:1900px;
+    height:1000px;
+    z-index:1;
 
 }
