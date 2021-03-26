@@ -8,6 +8,7 @@ const controller2 = new ScrollMagic.Controller();
 const controller3 = new ScrollMagic.Controller();
 const controller4 = new ScrollMagic.Controller();
 
+tl.from("#Installation", .5, {x:200, opacity: 0}),
 tl.from("#Text1", .5, {x:200, opacity: 0}),
 tl.from("#Bild1", .5, {x:-200, opacity: 0}),
 tl.from("#Bild2", .5, {x:-200, opacity:0});
