@@ -278,8 +278,8 @@ padding-left:5em;
 
 #Telefon1{
 
-width:99%;
-height:45%;
+width:95%;
+height:30%;
 position:absolute;
     
 
@@ -288,8 +288,8 @@ position:absolute;
 
 #Telefon2{
 
-   width:99%;
-    height:45%;
+   width:95%;
+    height:30%;
     position:absolute;
     top:50%;
     
@@ -316,7 +316,7 @@ position:absolute;
 
 position:absolute;
 top:10%;
-right:15%;
+right:1%;
 
 }
 
@@ -401,5 +401,22 @@ z-index:1;
     width:1900px;
     height:1000px;
     z-index:1;
+
+}
+
+#Text187{
+
+position:absolute;
+top:40%;
+
+}
+
+#Bild187{
+
+
+position:absolute;
+width:10%;
+right:30%;
+top:10%;
 
 }

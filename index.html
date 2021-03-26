@@ -52,6 +52,350 @@
      </div>
 </section>
 
+<section ID="Theorie">
+     <h3 id="Server">Der VoIP-Server</h3>
+     <p style="margin-bottom: 0cm"><br/>
+     
+     </p>
+     <p align="left" style="margin-bottom: 0cm">Der VoIP-Server ist für
+     alle <b>Vermittlungsprozesse</b> und <b>Verbindungsanforderungen</b>
+     verantwortlich. Er übernimmt die Aufgaben, die der klassischen
+     Telefonanlage entsprechen. Mit der Anmeldung am Netzwerk steht die
+     <b>persönliche</b> Telefonie-Umgebung des VoIP-Clienten, mit eigener
+     <b>Durchwahl</b>, zur Verfügung. Meistens ist der VoIP-Server auf
+     dem selben Computer wie das VoIP-Gateway (bei einer reinen
+     Software-Lösung). 
+     </p>
+     <p align="center" style="margin-bottom: 0cm"><br/>
+     
+     </p>
+     <p style="margin-bottom: 0cm"><br/>
+     
+     </p>
+     <p>Serverarten</p>
+     <h3 class="western">Registrar</h3>
+     <p align="left">Bei einem Registrar kann sich ein Endpunkt
+     registrieren. Diese Funktionalität ist typischerweise in einem
+     Proxy-Server oder Redirect-Server integriert, damit dieser auf die
+     Registrierungsdaten zugreifen kann. 
+     </p>
+     <h3 class="western">Location-Server</h3>
+     <p align="left">Bei einem Location-Server können andere Server
+     Endpunkte einen registrierten Benutzer anhand der SIP-Adresse suchen.
+     Diese Funktionalität ist das Gegenstück zu einem Registrar und ist
+     ebenfalls typischerweise innerhalb eines Proxy-Server oder
+     Redirect-Server realisiert. 
+     </p>
+     <h3 class="western">Proxy-Server</h3>
+     <p align="left">Ein Proxy-Server übernimmt die Weiterleitung von
+     Nachrichten. Wenn eine Einladung bei einem Proxy-Server eingeht,
+     leitet er sie an die Adressen weiter, an denen er die Zielperson
+     vermutet. Hierbei kann die Nachricht auch verschiedene Wege nehmen,
+     falls der Proxy-Server mehrere mögliche Zielpunkte kennt
+     (Forking-Proxy). Diese Zielpunkte können selbst wieder Proxy-Server
+     sein. 
+     </p>
+     <h3 class="western">Redirect-Server</h3>
+     <p align="left" style="margin-bottom: 0cm">Ein Redirect-Server nimmt
+     wie ein Proxy-Server Nachrichten an, leitet sie aber nicht weiter.
+     Stattdessen gibt er die Adressen der Zielpunkte zurück und
+     derjenige, der die Anfrage gestellt hat muß sich selbst an die neuen
+     Zielpunkte wenden. 
+     </p>
+     <p><br/>
+     <br/>
+     
+     </p>
+     
+     <p style="margin-bottom: 0cm"><br/>
+     
+     </p>
+     <p align="left" style="margin-bottom: 0cm">Bei SIP gibt es nur zwei
+     Message Typen, Request und Response. Die Anforderung enthält
+     Methoden, die die geforderte Aktion kennzeichnen, die Antwort solche,
+     die das Ergebnis der Anforderung beschreiben. Für den <b>Request</b>
+     sind sechs Methoden definiert worden: 
+     </p>
+     <p><br/>
+     <br/>
+     
+     </p>
+     <dl>
+          <dt>Invite</dt><dd>
+          Diese Methode lädt einen User zu einem Gespräch ein und baut eine
+          neue Verbindung auf. Außerdem kann sie Anforderungen an die
+          Verbindung enthalten. 
+          </dd><dt>
+          ACK 
+          </dt><dd>
+          Das ist der Acknowledge-Befehl zur Bestätigung oder Annahme einer
+          Einladung 
+          </dd><dt>
+          Register 
+          </dt><dd>
+          Hiermit werden Informationen zum Aufenthaltsort der Teilnehmers zum
+          SIP Server oder zum Location Server übermittelt. 
+          </dd><dt>
+          Options 
+          </dt><dd>
+          Der Server übermittelt Informationen über die benötigten Dienste
+          oder Bandbreiten. 
+          </dd><dt>
+          Bye 
+          </dt><dd style="margin-bottom: 0.5cm">
+          Hiermit wird die Verbindung zwischen zwei Teilnehmern beendet. 
+          </dd></dl>
+     <p>
+     Die <b>Response Message</b> hat eine ähnliche Struktur wie HTTP 1.0
+     und beinhaltet ebenfalls sechs Varianten: 
+     </p>
+     <dl>
+          <dt>Request Received 
+          </dt><dd>
+          Die Anforderung wird weiter bearbeitet 
+          </dd><dt>
+          Success 
+          </dt><dd>
+          Die Aktion wurde erfolgreich erhalten, verstanden und akzeptiert 
+          </dd><dt>
+          Redirection 
+          </dt><dd>
+          Es sind weitere Aktionen für eine komplette Anforderung nötig 
+          </dd><dt>
+          Client Error 
+          </dt><dd>
+          Das Request enthält einen falschen Syntax oder kann vom Server
+          nicht ausgeführt werden 
+          </dd><dt>
+          Server Error 
+          </dt><dd>
+          Der Server war nicht in der Lage, den Request auszuführen 
+          </dd><dt>
+          Global Failure 
+          </dt><dd style="margin-bottom: 0.5cm">
+          Der Request konnte auf keinem der Server ausgeführt werden 
+          </dd></dl>
+     <p style="margin-bottom: 0cm">
+     
+     
+     unterstützt u. a. Anrufbeantworter, Telefonkonferenzen, kann mit
+     anderen Servern kommunizieren und kann mit der konventionellen
+     Telefonwelt zusammengeschaltet werden. <br/>
+     <br/>
+     Graphische
+     Konfigurationstools befinden sich noch in der Entwicklung. Deshalb
+     müssen Sie die Konfigurationsdateien, welche sich unter
+     <b>/etc/asterisk</b> befinden, von Hand bearbeiten. 
+     <br>
+     </p>
+     <table width="100%" cellpadding="2" cellspacing="2">
+          <thead>
+               <tr>
+                    <td colspan="2" style="border: 1px double #808080; padding: 0.05cm">
+                         <p align="center">Die wichtigsten Konfigurationsdateien mit
+                         Kurzbeschreibung.</p>
+                    </td>
+               </tr>
+          </thead>
+          <tbody>
+               <tr>
+                    <td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0cm">
+                         sip.conf
+                    </td>
+                    <td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm">
+                         <p>Dort werden IP-Telefone, IP-Telfonieanbieter (Provider) und
+                         die IP-Telefonie-Benutzer definiert.</p>
+                    </td>
+               </tr>
+               <tr>
+                    <td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0cm">
+                         extensions.conf
+                    </td>
+                    <td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm">
+                         <p>Hier werden die Aktionen bei einem Anruf definiert. Sowohl für
+                         Rufnummern als auch für Benutzer möglich!!</p>
+                    </td>
+               </tr>
+               <tr>
+                    <td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0cm">
+                         modem.conf
+                    </td>
+                    <td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm">
+                         <p>Die Verbindung zur &quot;alten&quot; Telefonwelt wird hier
+                         hergestellt und definiert! (über ein Modem)</p>
+                    </td>
+               </tr>
+               <tr>
+                    <td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0cm">
+                         queues.conf
+                    </td>
+                    <td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm">
+                         <p>Hier liegt die Verteilerliste. Z. B. für Call-Center usw.</p>
+                    </td>
+               </tr>
+               <tr>
+                    <td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: none; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0cm">
+                         voicemail.conf
+                    </td>
+                    <td style="border-top: none; border-bottom: 1px double #808080; border-left: 1px double #808080; border-right: 1px double #808080; padding-top: 0cm; padding-bottom: 0.05cm; padding-left: 0.05cm; padding-right: 0.05cm">
+                         <p>Hier wird alles rund um den Anrufbeantworter festgelegt. Die
+                         erhaltenen Voicemails liegen in: /var/spool/asterisk/voicemail/.</p>
+                    </td>
+               </tr>
+          </tbody>
+     </table>
+     
+     <p style="margin-bottom: 0cm"><br/>
+     
+     </p>
+     <p align="left" style="margin-bottom: 0cm">Bei SIP gibt es nur zwei
+     Message Typen, Request und Response. Die Anforderung enthält
+     Methoden, die die geforderte Aktion kennzeichnen, die Antwort solche,
+     die das Ergebnis der Anforderung beschreiben. Für den <b>Request</b>
+     sind sechs Methoden definiert worden: 
+     </p>
+     <p><br/>
+     <br/>
+     
+     </p>
+     <dl>
+          <dt>Invite</dt><dd>
+          Diese Methode lädt einen User zu einem Gespräch ein und baut eine
+          neue Verbindung auf. Außerdem kann sie Anforderungen an die
+          Verbindung enthalten. 
+          </dd><dt>
+          ACK 
+          </dt><dd>
+          Das ist der Acknowledge-Befehl zur Bestätigung oder Annahme einer
+          Einladung 
+          </dd><dt>
+          Register 
+          </dt><dd>
+          Hiermit werden Informationen zum Aufenthaltsort der Teilnehmers zum
+          SIP Server oder zum Location Server übermittelt. 
+          </dd><dt>
+          Options 
+          </dt><dd>
+          Der Server übermittelt Informationen über die benötigten Dienste
+          oder Bandbreiten. 
+          </dd><dt>
+          Bye 
+          </dt><dd style="margin-bottom: 0.5cm">
+          Hiermit wird die Verbindung zwischen zwei Teilnehmern beendet. 
+          </dd></dl>
+     <p>
+     Die <b>Response Message</b> hat eine ähnliche Struktur wie HTTP 1.0
+     und beinhaltet ebenfalls sechs Varianten: 
+     </p>
+     <dl>
+          <dt>Request Received 
+          </dt><dd>
+          Die Anforderung wird weiter bearbeitet 
+          </dd><dt>
+          Success 
+          </dt><dd>
+          Die Aktion wurde erfolgreich erhalten, verstanden und akzeptiert 
+          </dd><dt>
+          Redirection 
+          </dt><dd>
+          Es sind weitere Aktionen für eine komplette Anforderung nötig 
+          </dd><dt>
+          Client Error 
+          </dt><dd>
+          Das Request enthält einen falschen Syntax oder kann vom Server
+          nicht ausgeführt werden 
+          </dd><dt>
+          Server Error 
+          </dt><dd>
+          Der Server war nicht in der Lage, den Request auszuführen 
+          </dd><dt>
+          Global Failure 
+          </dt><dd style="margin-bottom: 0.5cm">
+          Der Request konnte auf keinem der Server ausgeführt werden 
+          </dd></dl>
+     <h1>
+     
+          <!-- Clients --><h3 id="clients">Clients Allgemein</h3>
+     <p><br/>
+          Auf dieser Homepage ist ein Beispiel der IP-Telefonie für
+          ein Firmennetzwerk.<br/>
+          Als Server wurde Asterisk genommen (Mehr auf
+          den Menüpunkten von Asterisk) und<br/>
+          als Clients wurde &quot;Kphone&quot;
+          für Linux und &quot;Firefly&quot; für Windows genommen.<br/>
+          <br/>
+          Die
+          Clients können, in dem Beispiel auf der Homepage, miteinander über
+          den Server<br/>
+          kommunizieren. Dazu benötigt man nur z.B drei PCs
+          für zwei Clients und einer für<br/>
+          Asterisk. Es muss zwischen den
+          PCs ein Netzwerk vorhanden sein, über das dann<br/>
+          später
+          telefoniert wird.</p>
+          <p><br/>
+          <br/>
+     
+         
+          <ol>
+               <li>
+          <p style="margin-bottom: 0cm">Installation 
+               </p>
+               </li>
+            
+       
+                    <ul type="square">
+                         <li>
+          <p style="margin-bottom: 0cm">apt-get install bison 
+                         </p>
+                         </li><li>
+          <p style="margin-bottom: 0cm">apt-get install dahdi 
+                         </p>
+                         </li><li>
+          <p style="margin-bottom: 0cm"><b>apt-get install asterisk</b>
+                                        </p>
+                         </li><li>
+          
+         
+                         </li>
+                    </ul>
+          
+          
+                         </li>
+                    </ul>
+               </ol>
+          <p style="margin-bottom: 0cm">Konfiguration 
+               </p>
+               <ol type="a">
+                    <li value="1"/>
+          <p style="margin-bottom: 0cm">Es müssen die
+                    benötigten Ports freigegeben werden (5060)
+                    </p>
+                    </li><li>
+          <p style="margin-bottom: 0cm">Unsere Konfigurationsdateien in
+                    /etc/asterisk kopieren 
+                    </p>
+                    </li><li>
+          <p style="margin-bottom: 0cm">Asterisk mit asterisk -vvvvvvc
+                    starten 
+                    </p>
+                    </li>
+          <p>Clientkonfiguration nach unseren Beispielen vornehmen 
+                    </p>
+               </ol>
+          </ol>
+     <br><br>
+          
+               <p style="margin-bottom: 0cm text-decoration:underline">Befehle</p>
+     
+               <p>sip show peers<br></p>
+     
+               <img src="showpeers.png">
+     
+     
+     </section>
+     
+
 <section ID="Section_Allgemeines">
      <article ID="Allgemeines"></article>
 
@@ -197,6 +541,7 @@
 <article ID="Telefone"></article>
 
 <img ID="Telefon1" src="Telefon1.png">
+<p ID="Text187">Im Browser die IP-Adresse des Telefons aufrufen und über den Tab "Ext1" unsere Konfiguration kopieren. (Admin-Mode ist notwendig)</p>
 <img ID="Telefon2" src="Telefon2.png">
 
      <img src="arrow_up.png" ID="arrow_up_3" onClick="document.getElementById('Konfiguration').scrollIntoView();"></img>
@@ -209,8 +554,10 @@
 
      <div ID="MicroSIP_1">
      Als Client haben wir die Software MicroSIP benutzt.<br> Diese kann man unter folgendem Link herunterladen:<br><br><a href="https://www.microsip.org/download/MicroSIP-3.20.3.zip">Download</a> <img ID="logo_MicroSIP" src="logo_MicroSIP.png"> 
-    <br><br> Wie wir die Software konfiguriert haben sieht man auf der rechten Seite.
+    <br><br> Wie wir die Software konfiguriert haben sieht man auf der rechten Seite. Wenn die Konfiguration erfolgreich war sollte unten Links nun Online stehen.
      </div>
+
+<img ID="Bild187" src="Microsip_Online.PNG">
 
      <img ID="MicroSIP_2" src="MicroSIP.png"></img>
 
@@ -241,6 +588,8 @@
      <img src="arrow_up.png" ID="arrow_up_3" onClick="document.getElementById('Client').scrollIntoView();"></img>
      <img src="arrow_down.png" ID="arrow_down_3" onClick="document.getElementById('#').scrollIntoView();"></img>
 </section>
+
+
 
 
 <script src="app.js"></script>
